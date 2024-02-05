@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Foto from "../../assets/IMG_20230802_094903_482.jpg";
+import Foto from "../../assets/IMG20230107120810.jpg";
 
 export function Presentation() {
   const [nameMedia, setNameMedia] = useState(null);
@@ -9,7 +9,7 @@ export function Presentation() {
   };
   return (
     <>
-      <div className="lg:px-44 px-10 z-50">
+      <div className="lg:px-44 px-10 z-50 text-white">
         <h1 className="font-rubik uppercase md:text-7xl text-4xl leading-none tracking-tight">
           Diego
         </h1>
@@ -20,9 +20,9 @@ export function Presentation() {
           Desarrollador full stack
         </p>
       </div>
-      <div className="absolute flex dark:opacity-30 opacity-70">
+      <div className="absolute lg:-bottom-3 flex dark:opacity-30 opacity-60 bg-black md:right-0 -right-20">
         <img
-          className="md:h-auto sm:w-screen h-screen w-auto"
+          className="lg:h-auto lg:w-screen h-screen max-w-9xl"
           src={Foto}
           alt="setup"
         />

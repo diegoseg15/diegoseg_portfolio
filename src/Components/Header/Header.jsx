@@ -18,8 +18,9 @@ export function Header() {
   }, [bandera]);
 
   return (
-    <div className="flex justify-between md:px-24 px-10 py-5 font-rubik dark:text-gray-50 text-black bg-transparent bg-opacity-20">
-      <div className="text-lg">
+    <div className="flex justify-between py-2 px-5 font-rubik dark:text-gray-50 text-black">
+      <div className="flex text-xl font-semibold">Portafolio</div>
+      <div className="md:flex items-center hidden">
         <a
           href="#inicio"
           className="dark:text-sky-600 font-bold border-b-3 text border-sky-600 md:mr-10 mr-5"
@@ -46,14 +47,12 @@ export function Header() {
         </a>
         <a
           href="#acerca-de-mi"
-          className="dark:text-gray-50 hover:border-b-3 text hover:border-sky-600"
+          className="dark:text-gray-50 hover:border-b-3 text hover:border-sky-600 md:mr-10 mr-5"
         >
           Portafolio
         </a>
-      </div>
-      <div>
         <button
-        className="hover:text-primary"
+          className="hover:text-primary"
           onClick={(event) => {
             event.preventDefault();
             darkMode(event);
@@ -93,6 +92,24 @@ export function Header() {
               <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
             </svg>
           )}
+        </button>
+      </div>
+      <div className="md:hidden flex items-center">
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
         </button>
       </div>
     </div>
