@@ -18,9 +18,9 @@ export function Header() {
   }, [bandera]);
 
   return (
-    <div className="flex justify-between py-2 px-5 font-rubik dark:text-gray-50 text-black">
+    <div className="absolute top-0 lg:w-10/11 z-60 dark:bg-black bg-white rounded-full mt-5 lg:mx-24 w-screen flex justify-between py-2 px-5 font-rubik dark:text-gray-50 text-black">
       <div className="flex text-xl font-semibold">Portafolio</div>
-      <div className="md:flex items-center hidden">
+      <nav className="md:flex items-center hidden">
         <a
           href="#inicio"
           className="dark:text-sky-600 font-bold border-b-3 text border-sky-600 md:mr-10 mr-5"
@@ -93,7 +93,7 @@ export function Header() {
             </svg>
           )}
         </button>
-      </div>
+      </nav>
       <div className="md:hidden flex items-center">
         <button>
           <svg
