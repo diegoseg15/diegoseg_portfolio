@@ -8,6 +8,18 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      width: {
+        "1/11": "8.5%", // Slightly reduced
+        "2/11": "17.5%", // Slightly reduced
+        "3/11": "26.5%", // Slightly reduced
+        "4/11": "35.5%", // Slightly reduced
+        "5/11": "44.5%", // Slightly reduced
+        "6/11": "53.5%", // Slightly reduced
+        "7/11": "62.5%", // Slightly reduced
+        "8/11": "71.5%", // Slightly reduced
+        "9/11": "80.5%", // Slightly reduced
+        "10/11": "89.5%", // Slightly reduced
+      },
       boxShadow: {
         DEFAULT:
           "0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.02)",
