@@ -27,7 +27,7 @@ export function Presentation() {
           alt="setup"
         />
       </div>
-      <ul className="md:mx-20 mx-9 my-10 absolute dark:bg-transparent bg-white bg-opacity-60 flex bottom-0 font-rubik rounded-lg">
+      <ul className="md:mx-24 mx-9 my-10 absolute dark:bg-transparent bg-white bg-opacity-60 flex bottom-0 font-rubik rounded-lg">
         <li>
           <button
             className="flex dark:font-normal font-bold hover:text-sky-600 md:pr-10 pr-5 p-1"
