@@ -7,7 +7,6 @@ import { Skills } from "../Components/Skills";
 import { Xperience } from "../Components/Xperience";
 
 export default function Home() {
-  
   return (
     <div>
       <section
@@ -22,13 +21,22 @@ export default function Home() {
       >
         <AboutMe />
       </section>
-      <section className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3 md:gap-y-4 gap-x-10 font-rubik text-center w-screen h-full dark:bg-black bg-white dark:text-gray-400 text-gray-700 pb-20 lg:px-5 px-9">
+      <section
+        id="habilidades"
+        className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3 md:gap-y-4 gap-x-10 font-rubik text-center w-screen h-full dark:bg-black bg-white dark:text-gray-400 text-gray-700 py-20 lg:px-5 px-9"
+      >
         <Skills />
       </section>
-      <section className="relative overflow-hidden flex flex-col w-screen h-full dark:bg-black bg-white dark:text-gray-50 md:px-48 px-10">
+      <section
+        id="experiencia"
+        className="relative overflow-hidden flex flex-col w-screen h-full dark:bg-black bg-white dark:text-gray-50 md:px-48 px-10 py-20"
+      >
         <Xperience />
       </section>
-      <section className="relative w-screen h-screen dark:bg-black bg-white dark:text-gray-50 text-black">
+      <section
+        id="proyectos"
+        className="relative w-screen h-screen dark:bg-black bg-white dark:text-gray-50 text-black"
+      >
         <section className="m-0 p-0 box-border border-none outline-none list-none font-rubik cursor-pointer">
           <Carousel />
         </section>
