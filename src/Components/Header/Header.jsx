@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export function Header() {
   const [theme, setTheme] = useState(false);
   const [bandera, setBandera] = useState(true);
+
   const darkMode = () => {
     if (document.documentElement.classList.value === "dark") {
       document.documentElement.classList.remove("dark");
@@ -23,33 +25,53 @@ export function Header() {
       <nav className="md:flex items-center hidden">
         <a
           href="#inicio"
-          className="dark:text-sky-600 font-bold border-b-3 text border-sky-600 md:mr-10 mr-5"
+          className={`${
+            useLocation().hash === "#inicio"
+              ? "dark:text-sky-600 font-bold border-sky-600 border-b-3"
+              : "dark:text-gray-50"
+          } hover:border-sky-600  md:mr-10 mr-5  hover:border-b-3`}
         >
           Inicio
         </a>
         <a
           href="#acerca-de-mi"
-          className="dark:text-gray-50 hover:border-b-3 text hover:border-sky-600 md:mr-10 mr-5"
+          className={`${
+            useLocation().hash === "#acerca-de-mi"
+              ? "dark:text-sky-600 font-bold border-sky-600 border-b-3"
+              : "dark:text-gray-50"
+          } hover:border-sky-600  md:mr-10 mr-5  hover:border-b-3`}
         >
           Acerca de mí
         </a>
         <a
-          href="#acerca-de-mi"
-          className="dark:text-gray-50 hover:border-b-3 text hover:border-sky-600 md:mr-10 mr-5"
+          href="#habilidades"
+          className={`${
+            useLocation().hash === "#habilidades"
+              ? "dark:text-sky-600 font-bold border-sky-600 border-b-3"
+              : "dark:text-gray-50"
+          } hover:border-sky-600  md:mr-10 mr-5  hover:border-b-3`}
         >
           Habilidades
         </a>
         <a
-          href="#acerca-de-mi"
-          className="dark:text-gray-50 hover:border-b-3 text hover:border-sky-600 md:mr-10 mr-5"
+          href="#experiencia"
+          className={`${
+            useLocation().hash === "#experiencia"
+              ? "dark:text-sky-600 font-bold border-sky-600 border-b-3"
+              : "dark:text-gray-50"
+          } hover:border-sky-600  md:mr-10 mr-5  hover:border-b-3`}
         >
           Experiencia
         </a>
         <a
-          href="#acerca-de-mi"
-          className="dark:text-gray-50 hover:border-b-3 text hover:border-sky-600 md:mr-10 mr-5"
+          href="#proyectos"
+          className={`${
+            useLocation().hash === "#proyectos"
+              ? "dark:text-sky-600 font-bold border-sky-600 border-b-3"
+              : "dark:text-gray-50"
+          } hover:border-sky-600  md:mr-10 mr-5  hover:border-b-3`}
         >
-          Portafolio
+          Proyectos
         </a>
         <button
           className="hover:text-primary"
