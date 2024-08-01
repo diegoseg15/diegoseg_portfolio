@@ -29,7 +29,10 @@ export function Presentation() {
       </div>
       <ul className="md:mx-24 mx-9 my-10 absolute dark:bg-transparent bg-white bg-opacity-60 flex bottom-0 font-rubik rounded-lg">
         <li>
-          <button
+          <a
+            href="https://www.instagram.com/diegoseg_15"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex dark:font-normal font-bold hover:text-sky-600 md:pr-10 pr-5 p-1"
             onMouseEnter={(event) => mediaCapture(event, "instagram")}
             onMouseLeave={(event) => mediaCapture(event, null)}
@@ -54,11 +57,14 @@ export function Presentation() {
             {nameMedia === "instagram" && (
               <p className="ml-1 md:block hidden">diegoseg_15</p>
             )}
-          </button>
+          </a>
         </li>
 
         <li>
-          <button
+          <a
+            href="https://www.tiktok.com/@diegoseg_15"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex dark:font-normal font-bold hover:text-sky-600 md:pr-10 pr-5 p-1"
             onMouseEnter={(event) => mediaCapture(event, "tiktok")}
             onMouseLeave={(event) => mediaCapture(event, null)}
@@ -81,10 +87,13 @@ export function Presentation() {
             {nameMedia === "tiktok" && (
               <p className="ml-1 md:block hidden">diegoseg_15</p>
             )}
-          </button>
+          </a>
         </li>
         <li>
-          <button
+          <a
+            href="https://github.com/diegoseg15"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex dark:font-normal font-bold hover:text-sky-600 md:pr-10 pr-5 p-1"
             onMouseEnter={(event) => mediaCapture(event, "github")}
             onMouseLeave={(event) => mediaCapture(event, null)}
@@ -107,10 +116,13 @@ export function Presentation() {
             {nameMedia === "github" && (
               <p className="ml-1 md:block hidden">diegoseg15</p>
             )}
-          </button>
+          </a>
         </li>
         <li>
-          <button
+          <a
+            href="https://www.linkedin.com/in/diegoseg15/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex dark:font-normal font-bold hover:text-sky-600 p-1"
             onMouseEnter={(event) => mediaCapture(event, "linkedin")}
             onMouseLeave={(event) => mediaCapture(event, null)}
@@ -135,9 +147,9 @@ export function Presentation() {
               <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
             </svg>
             {nameMedia === "linkedin" && (
-              <p className="ml-1 md:block hidden">diegoseg_15</p>
+              <p className="ml-1 md:block hidden">diegoseg15</p>
             )}
-          </button>
+          </a>
         </li>
       </ul>
     </>
