@@ -3,7 +3,7 @@ import React from "react";
 export function Skills() {
   return (
     <>
-      <h3 className="lg:col-span-6 md:col-span-4 col-span-3 pb-6 text-4xl font-bold dark:text-gray-50 text-black">
+      <h3 className="lg:col-span-6 md:col-span-4 col-span-3 pb-20 text-4xl font-bold dark:text-gray-50 text-black">
         Habilidades
       </h3>
       <section className="flex flex-col justify-center items-center">
