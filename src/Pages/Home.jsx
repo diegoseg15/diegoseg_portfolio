@@ -29,17 +29,15 @@ export default function Home() {
       </section>
       <section
         id="experiencia"
-        className="relative overflow-hidden flex flex-col w-screen h-full dark:bg-black bg-white dark:text-gray-50 md:px-48 px-10 py-20"
+        className="relative overflow-hidden flex flex-col w-screen h-full dark:bg-black bg-white dark:text-gray-50 md:px-48 px-10 pt-20"
       >
         <Xperience />
       </section>
       <section
         id="proyectos"
-        className="relative w-screen h-screen dark:bg-black bg-white dark:text-gray-50 text-black"
+        className="relative overflow-hidden flex flex-col w-screen h-full dark:bg-black bg-white dark:text-gray-50 md:px-20 px-3 pb-20"
       >
-        <section className="m-0 p-0 box-border border-none outline-none list-none font-rubik cursor-pointer">
-          <Carousel />
-        </section>
+        <Carousel />
       </section>
     </div>
   );
