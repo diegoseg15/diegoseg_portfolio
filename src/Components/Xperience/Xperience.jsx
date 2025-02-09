@@ -22,7 +22,7 @@ export function Xperience() {
     {
       año: 2023,
       puesto: "Desarrollo y diseño de CRM",
-      empresa: "Importadora Alvarado (IAM)",
+      empresa: "Importadora Alvarado (IAV)",
       descripcion: [
         "Desarrollo en Front-end y Back-end.",
         "Desarrollo de un CRM responsive (PC-Móvil).",
@@ -33,7 +33,7 @@ export function Xperience() {
     {
       año: 2022,
       puesto: "Pasante en el departamento de sistemas",
-      empresa: "Importadora Alvarado (IAM)",
+      empresa: "Importadora Alvarado (IAV)",
       descripcion: [
         "Desarrollo de un webservice en PHP para el traslado de datos entre aplicaciones.",
         "Desarrollo de una aplicación de lectura de tablas en formato TXT del SRI en Java.",
