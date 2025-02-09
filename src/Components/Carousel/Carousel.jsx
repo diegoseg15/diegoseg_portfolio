@@ -28,7 +28,7 @@ export function Carousel () {
 
         const result = await response.json()
         setData(result)
-        console.log(result);
+        // console.log(result);
 
         const officialProjects = result.filter(project =>
           project.topics?.includes('official')
