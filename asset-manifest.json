@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/diegoseg_portafolio/static/css/main.b3e0bb8b.css",
+    "main.js": "/diegoseg_portafolio/static/js/main.eae724eb.js",
+    "static/js/787.ae0d8d37.chunk.js": "/diegoseg_portafolio/static/js/787.ae0d8d37.chunk.js",
+    "static/media/IMG20230107120810.jpg": "/diegoseg_portafolio/static/media/IMG20230107120810.00db9b630332f7554628.jpg",
+    "static/media/2022-12-09.jpg": "/diegoseg_portafolio/static/media/2022-12-09.b79b01e0395d4542e423.jpg",
+    "index.html": "/diegoseg_portafolio/index.html",
+    "main.b3e0bb8b.css.map": "/diegoseg_portafolio/static/css/main.b3e0bb8b.css.map",
+    "main.eae724eb.js.map": "/diegoseg_portafolio/static/js/main.eae724eb.js.map",
+    "787.ae0d8d37.chunk.js.map": "/diegoseg_portafolio/static/js/787.ae0d8d37.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3e0bb8b.css",
+    "static/js/main.eae724eb.js"
+  ]
+}
