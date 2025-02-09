@@ -12,15 +12,17 @@ export function Carousel () {
         const token = process.env.React_APP_GITHUB_TOKEN
         // console.log('Token:', token)
 
-        const response = await fetch(
-          'https://api.github.com/users/diegoseg15/repos',
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-              'X-GitHub-Api-Version': '2022-11-28'
-            }
-          }
-        )
+        const response = token
+          ? await fetch('https://api.github.com/users/diegoseg15/repos', {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                'X-GitHub-Api-Version': '2022-11-28'
+              }
+            })
+          : await fetch('https://api.github.com/users/diegoseg15/repos', {})
+
+          !token && console.error('No git tk provided');
+          
 
         if (!response.ok) {
           throw new Error(`Error ${response.status}: ${response.statusText}`)
@@ -28,7 +30,7 @@ export function Carousel () {
 
         const result = await response.json()
         setData(result)
-        // console.log(result);
+        // console.log(result)
 
         const officialProjects = result.filter(project =>
           project.topics?.includes('official')
@@ -36,7 +38,6 @@ export function Carousel () {
 
         const formattedProjects = await Promise.all(
           officialProjects.map(async project => {
-
             // Obtener el contenido del README.md
             const readmeResponse = await fetch(project.url + '/readme', {
               headers: {
@@ -63,8 +64,9 @@ export function Carousel () {
               id: project.id,
               title: project.name,
               description: project.description || 'No description available.',
-              imageUrl: imageUrls[0] || "", // Usa la primera imagen encontrada o la imagen del avatar
-              languages: project.topics.filter(topic=>topic!=="official") || [],
+              imageUrl: imageUrls[0] || '', // Usa la primera imagen encontrada o la imagen del avatar
+              languages:
+                project.topics.filter(topic => topic !== 'official') || []
             }
           })
         )
