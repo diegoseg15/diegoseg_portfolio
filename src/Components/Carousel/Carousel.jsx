@@ -9,7 +9,7 @@ export function Carousel () {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const token = process.env.React_APP_GITHUB_TOKEN
+        const token = ''
         // console.log('Token:', token)
 
         const response = token
@@ -21,8 +21,7 @@ export function Carousel () {
             })
           : await fetch('https://api.github.com/users/diegoseg15/repos', {})
 
-          !token && console.error('No git tk provided');
-          
+        !token && console.error('No git tk provided')
 
         if (!response.ok) {
           throw new Error(`Error ${response.status}: ${response.statusText}`)
@@ -137,14 +136,14 @@ export function Carousel () {
                     : 'hidden'
                 }`}
               >
-                <h3 className='text-2xl md:text-3xl font-bold text-primary-foreground md:px-0 px-5'>
-                  {project.title}
+                <h3 className='text-2xl md:text-3xl font-bold text-primary-foreground md:px-0 px-5 capitalize'>
+                  {project.title.replace(/-/g, ' ')}
                 </h3>
                 <p className='text-muted-foreground text-sm md:text-base md:pr-32 md:px-0 px-5'>
                   {project.description}
                 </p>
                 <div className='md:px-0 px-5'>
-                  <div className='flex gap-4 font-bold text-primary-foreground text-sm md:text-base'>
+                  <div className='flex flex-wrap gap-4 font-bold text-primary-foreground text-sm md:text-base'>
                     {project.languages.map((language, index) => (
                       <span key={index}>{language}</span>
                     ))}
@@ -154,7 +153,7 @@ export function Carousel () {
                   <a
                     href={`https://github.com/diegoseg15/${project.title}`}
                     target='_blank'
-                    className='inline-flex items-center justify-center rounded-full bg-sky-600 px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+                    className='inline-flex items-center justify-center rounded-full text-white bg-sky-600 px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
                   >
                     Ver Proyecto
                   </a>

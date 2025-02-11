@@ -9,9 +9,31 @@ export function Xperience() {
 
   const xperienceData = [
     {
-      año: 2023,
+      año: "Actualmente",
       puesto: "Desarrollo y diseño de ERP Educativo",
       empresa: "Unidad Educativa A Distancia Republica de Argentina",
+      descripcion: [
+        "Desarrollo en Front-end y Back-end.",
+        "Desarrollo de un ERP responsive (PC-Móvil) de varios módulos.",
+        "Programación en JavaScript con los frameworks React Js y Tailwind CSS.",
+        "Programación de contenidos web con HTML, CSS (Tailwind), Javascript (React) y MongoDB.",
+      ],
+    },
+    // {
+    //   año: "2024",
+    //   puesto: "Desarrollo y diseño de ERP Educativo",
+    //   empresa: "Unidad Educativa A Distancia Republica de Argentina",
+    //   descripcion: [
+    //     "Desarrollo en Front-end y Back-end.",
+    //     "Desarrollo de un ERP responsive (PC-Móvil) de varios módulos.",
+    //     "Programación en JavaScript con los frameworks React Js y Tailwind CSS.",
+    //     "Programación de contenidos web con HTML, CSS (Tailwind), Javascript (React) y MongoDB.",
+    //   ],
+    // },
+    {
+      año: "2024",
+      puesto: "Sitio Web para recaudación de fondos",
+      empresa: "Hogar Santa Marianita",
       descripcion: [
         "Desarrollo en Front-end y Back-end.",
         "Desarrollo de un ERP responsive (PC-Móvil) de varios módulos.",
