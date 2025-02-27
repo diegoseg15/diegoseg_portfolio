@@ -74,17 +74,17 @@ export function Xperience() {
         "Implementación y mantenimiento de soluciones de software.",
       ],
     },
-    {
-      año: "2021 - 2022",
-      puesto: "Asistente de Marketing",
-      empresa: "Unidad Educativa A Distancia Republica de Argentina",
-      descripcion: [
-        "Manejo de gestores de contenido como WordPress.",
-        "Creación de sitios web fáciles de usar.",
-        "Creación y edición de videos para su utilización en redes sociales y diferentes canales publicitarios digitales.",
-        "Identificación de nuevas oportunidades y tendencias en redes sociales y plataformas de contenidos.",
-      ],
-    },
+    // {
+    //   año: "2021 - 2022",
+    //   puesto: "Asistente de Marketing",
+    //   empresa: "Unidad Educativa A Distancia Republica de Argentina",
+    //   descripcion: [
+    //     "Manejo de gestores de contenido como WordPress.",
+    //     "Creación de sitios web fáciles de usar.",
+    //     "Creación y edición de videos para su utilización en redes sociales y diferentes canales publicitarios digitales.",
+    //     "Identificación de nuevas oportunidades y tendencias en redes sociales y plataformas de contenidos.",
+    //   ],
+    // },
     {
       año: "2021",
       puesto: "Desarrollo de un Sitio Web de Campaña Publicitaria",

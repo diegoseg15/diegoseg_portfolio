@@ -1,12 +1,42 @@
+import { type } from '@testing-library/user-event/dist/type'
 import { useState, useEffect } from 'react'
 
 export function Carousel () {
   const [projects, setProjects] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState('right')
-  const [data, setData] = useState([])
 
   useEffect(() => {
+    const privateProjects = [
+      {
+        id: 156161,
+        title: 'CRM de contacto con distribuidores - IAV',
+        description:
+          'Plataforma diseñada para optimizar la gestión de contactos con distribuidores de la empresa IAV. Facilita el seguimiento de necesidades, la asignación de tareas por áreas y la generación de reportes detallados, mejorando la comunicación y eficiencia en la gestión comercial.',
+        imageUrl: 'https://github.com/diegoseg15/diegoseg15/blob/main/src/assets/Captura%20de%20pantalla_20221128_0549352.png',
+        languages: ['javascript', 'react', 'nodejs', 'mongodb', 'express'],
+        type: 'private'
+      },
+      {
+        id: 2635265,
+        title: 'ERP Educativo de UEArgentina',
+        description:
+          'Plataforma integral para la gestión académica y administrativa de la institución educativa. Permite administrar alumnos, docentes, materias, calificaciones, asistencias, horarios, aulas y otros aspectos clave, centralizando la información y optimizando los procesos internos.',
+        imageUrl: '',
+        languages: ['javascript', 'NextJS', 'nodejs', 'MySQL', 'express'],
+        type: 'private'
+      },
+      {
+        id: 2564513,
+        title: 'Cascada App UEArgentina',
+        description:
+          'Aplicación web de rangos diseñada para optimizar y automatizar la gestión de ingresos de nuevos alumnos en la institución educativa. Facilita la asignación de cupos, evaluación de requisitos y seguimiento del proceso de admisión, asegurando eficiencia y transparencia en cada etapa.',
+        imageUrl: '',
+        languages: ['javascript', 'react', 'nodejs', 'MySQL', 'express'],
+        type: 'private'
+      }
+    ]
+
     const fetchProjects = async () => {
       try {
         const token = ''
@@ -28,8 +58,6 @@ export function Carousel () {
         }
 
         const result = await response.json()
-        setData(result)
-        // console.log(result)
 
         const officialProjects = result.filter(project =>
           project.topics?.includes('official')
@@ -62,15 +90,17 @@ export function Carousel () {
             return {
               id: project.id,
               title: project.name,
-              description: project.description || 'No description available.',
+              description:
+                project.description || 'Aplicación intuitiva y facil de usar.',
               imageUrl: imageUrls[0] || '', // Usa la primera imagen encontrada o la imagen del avatar
+              type: 'public',
               languages:
                 project.topics.filter(topic => topic !== 'official') || []
             }
           })
         )
 
-        setProjects(formattedProjects)
+        setProjects(formattedProjects.concat(privateProjects))
       } catch (error) {
         console.error('Error al obtener los proyectos:', error)
       }
@@ -78,6 +108,8 @@ export function Carousel () {
 
     fetchProjects()
   }, [])
+
+  console.log('Projects:', projects)
 
   const handlePrevious = () => {
     setDirection('left')
@@ -142,18 +174,31 @@ export function Carousel () {
                 <p className='text-muted-foreground text-sm md:text-base md:pr-32 md:px-0 px-5'>
                   {project.description}
                 </p>
-                <div className='md:px-0 px-5'>
-                  <div className='flex flex-wrap gap-4 font-bold text-primary-foreground text-sm md:text-base'>
+                <div
+                  className={`md:px-0 px-5 ${
+                    project.languages.length > 0 ? '' : 'hidden'
+                  }`}
+                >
+                  <div className='flex flex-wrap gap-2 font-bold text-primary-foreground md:text-base py-5'>
                     {project.languages.map((language, index) => (
-                      <span key={index}>{language}</span>
+                      <span
+                        key={index}
+                        className='block dark:bg-slate-800 bg-blue-300 px-2 py-1 text-xs rounded-sm'
+                      >
+                        {language}
+                      </span>
                     ))}
                   </div>
                 </div>
-                <div className='md:px-0 px-5'>
+                <div
+                  className={`md:px-0 px-5 ${
+                    project.type === 'private' ? 'hidden' : ''
+                  }`}
+                >
                   <a
                     href={`https://github.com/diegoseg15/${project.title}`}
                     target='_blank'
-                    className='inline-flex items-center justify-center rounded-full text-white bg-sky-600 px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+                    className='inline-flex items-center justify-center rounded-full text-white bg-sky-600 px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring'
                   >
                     Ver Proyecto
                   </a>
@@ -170,7 +215,7 @@ export function Carousel () {
             </button>
             <button
               onClick={handleNext}
-              className='inline-flex items-center justify-center rounded-full bg-sky-600 px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+              className='inline-flex items-center justify-center rounded-full bg-sky-600 px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-25'
             >
               <ArrowRightIcon className='h-5 w-5' />
             </button>
