@@ -40,11 +40,11 @@ export default function Header() {
         <header
             className={`
         fixed top-0 left-0 w-full z-50 transition-all duration-300 text-white
-        ${scrolled ? "bg-slate-900 backdrop-blur-md shadow-sm" : "bg-transparent"}
+        ${scrolled ? "bg-[#001a31] backdrop-blur-md shadow-sm" : "bg-transparent"}
       `}
         >
             <div className="flex justify-between items-center px-10 py-5">
-                <h1 className="font-semibold text-2xl">Diego Segovia</h1>
+                <h1 className="font-bold text-2xl">Diego Segovia</h1>
 
                 <div className="flex space-x-6 items-center">
                     <nav className="flex space-x-6">
