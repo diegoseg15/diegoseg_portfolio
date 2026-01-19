@@ -8,13 +8,14 @@ import {
     Cube,
     Brain,
     LinkedinLogo,
-    GithubLogo
+    GithubLogo,
+    EnvelopeSimple
 } from "@phosphor-icons/react";
 import { Highlight } from "./Highlight";
 
 export default function AboutMe() {
     return (
-        <section id="about-me" className="px-20 py-24 grid md:grid-cols-2 gap-12 items-center">
+        <section id="about-me" className="lg:px-20 px-5 lg:py-24 py-16 grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Texto */}
             <div className="space-y-5">
@@ -42,13 +43,62 @@ export default function AboutMe() {
 
                 {/* Contacto */}
                 <div className="flex items-center gap-4 pt-2">
-                    <a href="https://linkedin.com/in/diegoseg15" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-sky-600 transition" >
-                        <LinkedinLogo size={22} />
-                        <span className="text-sm">LinkedIn</span>
+                    <a
+                        href="https://linkedin.com/in/diegoseg15"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="
+                            group relative overflow-hidden
+                            flex items-center gap-2 px-3 py-1.5 rounded-md
+                            text-gray-600 dark:text-gray-300
+                            transition-colors duration-300
+                            hover:text-sky-400
+                        "
+                    >
+                        <LinkedinLogo size={22} className="relative z-10" />
+                        <span className="relative z-10 text-sm">LinkedIn</span>
+
+                        <AnimateBackground />
                     </a>
-                    <a href="https://github.com/diegoseg15" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-sky-600 transition" >
-                        <GithubLogo size={22} />
-                        <span className="text-sm">GitHub</span>
+
+
+                    <a
+                        href="https://github.com/diegoseg15"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        className="
+                            group relative overflow-hidden
+                            flex items-center gap-2 px-3 py-1.5 rounded-md
+                            text-gray-600 dark:text-gray-300
+                            transition-colors duration-300
+                            hover:text-sky-400
+                        "
+                    >
+                        <GithubLogo size={22} className="relative z-10" />
+                        <span className="relative z-10 text-sm">GitHub</span>
+
+                        <AnimateBackground />
+                    </a>
+
+                    <a
+                        href="mailto:diegofersv15@hotmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        className="
+                            group relative overflow-hidden
+                            flex items-center gap-2 px-3 py-1.5 rounded-md
+                            text-gray-600 dark:text-gray-300
+                            transition-colors duration-300
+                            hover:text-sky-400
+                        "
+                    >
+                        <EnvelopeSimple size={22} className="relative z-10" />
+                        <span className="relative z-10 text-sm">Correo</span>
+
+                        <AnimateBackground />
                     </a>
                 </div>
             </div>
@@ -65,4 +115,18 @@ export default function AboutMe() {
 
         </section >
     );
+}
+
+const AnimateBackground = () => {
+    return (
+        <span
+            className="
+                absolute inset-0
+                bg-sky-700/10
+                -translate-x-full
+                transition-transform duration-300 ease-out
+                group-hover:translate-x-0
+            "
+        />
+    )
 }
