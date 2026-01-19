@@ -1,3 +1,4 @@
+import { Devices } from "@phosphor-icons/react";
 import { SvgIcon } from "../Icons/SkillsIcons";
 
 /* Card reutilizable */

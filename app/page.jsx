@@ -1,6 +1,6 @@
-import Banner from "@/components/Banner"
-import AboutMe from "@/components/AboutMe"
-import Skills from "@/components/Skills"
+import Banner from "@/components/Banner/Banner"
+import AboutMe from "@/components/AboutMe/AboutMe"
+import Skills from "@/components/Skill/Skill"
 
 export default function Home() {
   return (

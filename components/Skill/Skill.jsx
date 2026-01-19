@@ -1,5 +1,6 @@
 "use client";
 
+import { Cloud, Code, Database, DeviceMobile, PaintBrush } from "@phosphor-icons/react";
 import { SkillCard } from "./SkillCard";
 
 export default function Skills() {
