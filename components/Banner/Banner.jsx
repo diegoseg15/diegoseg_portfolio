@@ -4,7 +4,7 @@ import { Code, MicrophoneStage, Palette } from "@phosphor-icons/react"
 
 export default function Banner() {
     return (
-        <div className="relative w-screen h-screen bg-center bg-cover bg-[url('/images/banner-home.png')] text-white" id="hero">
+        <div className="relative w-screen h-screen bg-center bg-cover bg-[url('/images/banner-home.jpg')] text-white" id="hero">
             <div className="absolute top-1/3 left-20 max-w-lg">
                 <h1 className="text-7xl font-bold leading-tight">
                     Full Stack <br /> Developer
