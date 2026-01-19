@@ -1,5 +1,7 @@
 "use client";
 
+import { SkillCard } from "./SkillCard";
+
 export default function Skills() {
     return (
         <section className="px-20 py-24 space-y-14" id="skills">
