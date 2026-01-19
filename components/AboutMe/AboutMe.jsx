@@ -10,6 +10,7 @@ import {
     LinkedinLogo,
     GithubLogo
 } from "@phosphor-icons/react";
+import { Highlight } from "./Highlight";
 
 export default function AboutMe() {
     return (
