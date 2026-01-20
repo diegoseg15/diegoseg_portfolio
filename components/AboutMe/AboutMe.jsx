@@ -15,11 +15,11 @@ import { Highlight } from "./Highlight";
 
 export default function AboutMe() {
     return (
-        <section id="about-me" className="lg:px-20 px-5 lg:py-24 py-16 grid lg:grid-cols-2 gap-12 items-center">
+        <section id="about-me" className="lg:px-20 px-5 grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Texto */}
             <div className="space-y-5">
-                <h2 className="text-3xl font-bold leading-tight">
+                <h2 className="text-3xl font-bold leading-tight pb-5">
                     Ingeniero en Sistemas
                     <br />
                     <span className="text-sky-600">con formación de máster internacional</span>
