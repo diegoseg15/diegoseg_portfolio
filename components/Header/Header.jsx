@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { ArrowRight, List, X } from "@phosphor-icons/react";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const router = useRouter();
     const pathname = usePathname();
     const isHome = pathname === "/";
 
@@ -37,13 +38,18 @@ export default function Header() {
 
 
     const scrollToId = (id) => {
-        const root = document.getElementById("scroll-root");
-        const el = document.getElementById(id);
-        if (!root || !el) return;
+        if (!isHome) {
+            // 👉 Navega al home con hash
+            router.push(`/#${id}`);
+            return;
+        }
 
-        // OJO: esto hace scroll dentro del contenedor correcto
+        const el = document.getElementById(id);
+        if (!el) return;
+
         el.scrollIntoView({ behavior: "smooth", block: "start" });
     };
+
 
 
 
