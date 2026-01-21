@@ -1,4 +1,5 @@
 "use client";
+import { getAllProjects } from "@/lib/api/github";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 
 export default function Projects() {
@@ -9,23 +10,12 @@ export default function Projects() {
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
+  const [dataProjects, setDataProjects] = useState([])
 
-  const slides = [
-    {
-      id: 1,
-      title: "Proyecto 1",
-      subtitle: "Proyecto 1 de una app móvil hecha en React Native.",
-      category: ["React Native", "JavaScript"],
-      img: "https://images.unsplash.com/photo-1544427920-c49ccfb85579?auto=format&fit=crop&w=1422&q=80",
-    },
-    {
-      id: 2,
-      title: "Proyecto 2",
-      subtitle: "Proyecto 2 de una app web elaborada en React JS.",
-      category: ["React JS", "TypeScript"],
-      img: "https://images.unsplash.com/photo-1544144433-d50aff500b91?auto=format&fit=crop&w=1350&q=80",
-    },
-  ];
+  useEffect(() => {
+    getAllProjects().then(data => setDataProjects(data))
+
+  }, [])
 
   const minSwipeDistance = 60;
 
@@ -56,10 +46,10 @@ export default function Projects() {
   const startAutoPlay = useCallback(() => {
     intervalRef.current = setInterval(() => {
       setCurrentSlide((prev) =>
-        prev === slides.length - 1 ? 0 : prev + 1
+        prev === dataProjects.length - 1 ? 0 : prev + 1
       );
     }, 8000);
-  }, [slides.length]);
+  }, [dataProjects.length]);
 
   const resetAutoPlay = useCallback(() => {
     if (intervalRef.current) {
@@ -70,14 +60,14 @@ export default function Projects() {
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) =>
-      prev === slides.length - 1 ? 0 : prev + 1
+      prev === dataProjects.length - 1 ? 0 : prev + 1
     );
     resetAutoPlay();
-  }, [slides.length, resetAutoPlay]);
+  }, [dataProjects.length, resetAutoPlay]);
 
   const prevSlide = () => {
     setCurrentSlide((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
+      prev === 0 ? dataProjects.length - 1 : prev - 1
     );
     resetAutoPlay();
   };
@@ -95,7 +85,7 @@ export default function Projects() {
 
 
   return (
-    <section className="relative w-full overflow-hidden group lg:px-20 px-5 mb-28 space-y-14">
+    <section id="projects" className="relative w-full overflow-hidden group lg:px-20 px-5 mb-28 space-y-14">
       <h3 className="text-4xl font-bold text-black dark:text-gray-50">
         Proyectos
       </h3>
@@ -107,7 +97,7 @@ export default function Projects() {
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        {slides.map((slide, index) => {
+        {dataProjects.map((slide, index) => {
           const isActive = currentSlide === index;
           const isPrev = index < currentSlide;
 
@@ -131,10 +121,10 @@ export default function Projects() {
                   transition-transform duration-[2000ms] ease-out
                   ${isActive ? "scale-100" : "scale-105"}
                 `}
-                style={{ backgroundImage: `url(${slide.img})` }}
+                style={{ backgroundImage: `url(${slide.readmeImage})` }}
               >
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/70" />
 
                 {/* CONTENIDO */}
                 <div
@@ -147,14 +137,14 @@ export default function Projects() {
                       : "opacity-0 translate-y-4"}
                   `}
                 >
-                  <div className="md:w-1/2 text-white space-y-5">
+                  <div className="md:w-3/4 text-white space-y-2">
                     <h2 className="lg:text-5xl text-3xl font-extrabold">
-                      {slide.title}
+                      {slide.name}
                     </h2>
 
                     <div className="flex gap-2 flex-wrap">
-                      {slide.category.map((item, i) => (
-                        <span
+                      {slide.topics.map((item, i) => (
+                        item !== "official" && i < 5 && <span
                           key={i}
                           className="text-xs uppercase tracking-widest font-bold py-1 px-2 bg-sky-900 rounded-sm"
                         >
@@ -163,12 +153,12 @@ export default function Projects() {
                       ))}
                     </div>
 
-                    <p className="lg:text-xl text-base leading-snug">
-                      {slide.subtitle}
+                    <p className="lg:text-lg text-base leading-snug">
+                      {slide.description}
                     </p>
 
                     <a
-                      href="#"
+                      href={`/proyecto/${slide.name}`}
                       className="
                         inline-block mt-4
                         bg-sky-800 py-3 px-6
@@ -215,8 +205,8 @@ export default function Projects() {
       </button>
 
       {/* DOTS */}
-      <div className="absolute bottom-20 left-0 right-0 flex justify-center gap-2 z-20">
-        {slides.map((_, index) => (
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-2 z-20">
+        {dataProjects.map((_, index) => (
           <button
             key={index}
             onClick={() => {
