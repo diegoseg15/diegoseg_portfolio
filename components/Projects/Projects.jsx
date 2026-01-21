@@ -103,7 +103,7 @@ export default function Projects() {
 
           return (
             <div
-              key={slide.id}
+              key={index}
               className={`
                 absolute inset-0 transition-all duration-700 ease-in-out
                 ${isActive
