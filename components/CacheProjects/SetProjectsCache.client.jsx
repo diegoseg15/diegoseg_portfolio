@@ -15,6 +15,7 @@ export default function SetProjectsCache({ projects }) {
 
     const cached = localStorage.getItem(STORAGE_KEY);
 
+    // 1️⃣ No hay cache
     if (!cached) {
       save(projects);
       return;
@@ -23,11 +24,20 @@ export default function SetProjectsCache({ projects }) {
     try {
       const parsed = JSON.parse(cached);
 
-      if (!parsed.timestamp || Date.now() - parsed.timestamp > MAX_TIME) {
+      const isExpired =
+        !parsed.timestamp || Date.now() - parsed.timestamp > MAX_TIME;
+
+      const hasBackupProject = projects.some(
+        (p) => p.backupproject === true
+      );
+
+      // 2️⃣ Expirado o forzado por backup
+      if (isExpired || hasBackupProject) {
         save(projects);
       }
 
     } catch {
+      // 3️⃣ Cache corrupto
       save(projects);
     }
   }, []);
