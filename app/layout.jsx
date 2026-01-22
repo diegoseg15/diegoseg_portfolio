@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import { getAllProjects } from "@/lib/api/github";
+import SetProjectsCache from "@/components/CacheProjects/SetProjectsCache.client";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,12 +19,16 @@ export const metadata = {
   description: "Portafolio web de proyectos de Diego Segovia.",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+
+  const projects = await getAllProjects();
+
   return (
     <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  childbarscroll`}
       >
+        <SetProjectsCache projects={projects} />
         <Header />
         {children}
       </body>
