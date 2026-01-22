@@ -163,7 +163,7 @@ export default function Projects() {
                     </p>
 
                     <a
-                      href={`/proyecto/${slide.name}`}
+                      href={slide.backupproject?`https://github.com/diegoseg15/${slide.name}`: `/proyecto/${slide.name}`}
                       className="
                         inline-block mt-4
                         bg-sky-800 py-3 px-6
@@ -172,7 +172,7 @@ export default function Projects() {
                         hover:bg-white hover:text-sky-900
                       "
                     >
-                      Ver proyecto
+                      {slide.backupproject ? <span>Abrir en Github</span> : <span>Ver proyecto</span>}
                     </a>
                   </div>
                 </div>
