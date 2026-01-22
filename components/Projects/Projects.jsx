@@ -1,6 +1,6 @@
 "use client";
-import { getAllProjects } from "@/lib/api/github";
 import React, { useState, useEffect, useCallback, useRef } from "react";
+// import { getCookie } from "../Cookies/SetCookieClient";
 
 export default function Projects() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,13 +9,14 @@ export default function Projects() {
 
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-
-  const [dataProjects, setDataProjects] = useState([])
+  const [dataProjects, setDataProjects] = useState([]);
 
   useEffect(() => {
-    getAllProjects().then(data => setDataProjects(data))
+    const cached = JSON.parse(localStorage.getItem("projects_cache"));
+    const projects = cached?.data;
 
-  }, [])
+    setDataProjects(projects || []);
+  }, []);
 
   const minSwipeDistance = 60;
 
@@ -44,12 +45,15 @@ export default function Projects() {
 
 
   const startAutoPlay = useCallback(() => {
+    if (!dataProjects) return;
+
     intervalRef.current = setInterval(() => {
-      setCurrentSlide((prev) =>
+      setCurrentSlide(prev =>
         prev === dataProjects.length - 1 ? 0 : prev + 1
       );
     }, 8000);
-  }, [dataProjects.length]);
+  }, [dataProjects]);
+
 
   const resetAutoPlay = useCallback(() => {
     if (intervalRef.current) {
@@ -63,7 +67,7 @@ export default function Projects() {
       prev === dataProjects.length - 1 ? 0 : prev + 1
     );
     resetAutoPlay();
-  }, [dataProjects.length, resetAutoPlay]);
+  }, [dataProjects, resetAutoPlay]);
 
   const prevSlide = () => {
     setCurrentSlide((prev) =>
@@ -83,6 +87,7 @@ export default function Projects() {
     };
   }, [startAutoPlay]);
 
+  if (!dataProjects) return null;
 
   return (
     <section id="projects" className="relative w-full overflow-hidden group lg:px-20 px-5 mb-28 space-y-14">
