@@ -1,21 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
-  reactStrictMode: true,
+  output: "export",
   images: {
-    formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-    ],
+        hostname: "github.com",
+        pathname: "/diegoseg15/**"
+      }
+    ]
   },
 
-  experimental: {
-    appDir: true,
-  },
 };
 
 module.exports = nextConfig;
