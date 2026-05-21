@@ -6,7 +6,7 @@ import { getRepoReadme } from "@/lib/api/github";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkGemoji from "remark-gemoji";
-import { GithubLogo } from "@phosphor-icons/react";
+import { Brain, GitFork, GithubLogo, Star } from "@phosphor-icons/react";
 
 export default function ProjectClient() {
     const { IdProject } = useParams();
@@ -61,12 +61,12 @@ export default function ProjectClient() {
                         <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
                             {repo.language && (
                                 <span className="flex items-center gap-1">
-                                    🧠 <span>{repo.language}</span>
+                                    <Brain size={16} weight="fill" className="relative text-red-300 pr-1" /><span>{repo.language}</span>
                                 </span>
                             )}
 
-                            {repo.stars && <span>⭐ {repo.stars}</span>}
-                            {repo.forks && <span>🍴 {repo.forks}</span>}
+                            {repo.stars ? <span className="flex items-center gap-1"><Star size={16} weight="fill" className="relative text-amber-300 pr-1" />{repo.stars}</span> : null}
+                            {repo.forks ? <span className="flex items-center gap-1"><GitFork size={16} weight="fill" className="relative text-slate-400 pr-1" />{repo.forks}</span> : null}
                         </div>
 
                         {/* Topics */}

@@ -127,7 +127,7 @@ export default function Header() {
                             transition-all duration-300
                             hover:shadow-md hidden
                         "
-                        href="https://www.canva.com/design/DAF0MG858UU/N2ruW9la0Hq4oP8WwfQdRA/edit?utm_content=DAF0MG858UU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                        href="/cv/ATS_Diego_Segovia_CV_Full_Stack.pdf"
                         target="_blank"
                     >
                         Descargar CV
@@ -221,7 +221,7 @@ export default function Header() {
                             transition-all duration-300
                             hover:shadow-md md:hidden mx-10 my-10
                         "
-                            href="https://www.canva.com/design/DAF0MG858UU/N2ruW9la0Hq4oP8WwfQdRA/edit?utm_content=DAF0MG858UU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                            href="/cv/ATS_Diego_Segovia_CV_Full_Stack.pdf"
                             target="_blank"
                         >
                             Descargar CV

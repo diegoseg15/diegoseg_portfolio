@@ -106,7 +106,7 @@ export default function AboutMe() {
             {/* Highlights */}
             <div className="grid grid-cols-2 gap-4 text-sm">
                 <Highlight icon={<GraduationCap size={22} />} text="Máster en España" />
-                <Highlight icon={<Lightning size={22} />} text="+3 años de experiencia" />
+                <Highlight icon={<Lightning size={22} />} text="+5 años de experiencia" />
                 <Highlight icon={<Devices size={22} />} text="Web & Mobile Apps" />
                 <Highlight icon={<Cloud size={22} />} text="Cloud & Arquitectura" />
                 <Highlight icon={<Cube size={22} />} text="Arquitectura & Producto" />
