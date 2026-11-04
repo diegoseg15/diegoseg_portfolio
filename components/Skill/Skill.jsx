@@ -5,7 +5,7 @@ import { SkillCard } from "./SkillCard";
 
 export default function Skills() {
     return (
-        <section className="lg:px-20 px-5 space-y-14" id="skills">
+        <section className="lg:px-20 px-5 py-16 lg:py-24 min-h-dvh scroll-mt-[5.5rem] flex flex-col justify-center space-y-14" id="skills">
             <h3 className="text-4xl font-bold text-black dark:text-gray-50">
                 Áreas de experiencia
             </h3>

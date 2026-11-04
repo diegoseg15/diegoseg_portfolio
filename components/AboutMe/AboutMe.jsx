@@ -15,7 +15,7 @@ import { Highlight } from "./Highlight";
 
 export default function AboutMe() {
     return (
-        <section id="about-me" className="lg:px-20 px-5 grid lg:grid-cols-2 gap-12 items-center">
+        <section id="about-me" className="lg:px-20 px-5 py-16 lg:py-24 min-h-dvh scroll-mt-[5.5rem] grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Texto */}
             <div className="space-y-5">

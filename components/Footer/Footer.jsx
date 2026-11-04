@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800 mt-32">
+    <footer className="border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
@@ -16,18 +18,18 @@ export default function Footer() {
 
           {/* Links */}
           <nav className="flex gap-6 text-sm text-slate-600 dark:text-slate-400">
-            <a
+            <Link
               href="/"
               className="hover:text-sky-600 transition"
             >
               Inicio
-            </a>
-            <a
+            </Link>
+            <Link
               href="/proyecto"
               className="hover:text-sky-600 transition"
             >
               Proyectos
-            </a>
+            </Link>
             <a
               href="https://github.com/diegoseg15"
               target="_blank"

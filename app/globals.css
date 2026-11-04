@@ -40,3 +40,58 @@ body {
   background: #12618a;
   border-radius: 5px;
 }
+
+/* Projects gallery: one shared height per breakpoint, image width follows its ratio. */
+.project-gallery-scope {
+  --project-card-h: 15rem;
+}
+
+@media (min-width: 640px) {
+  .project-gallery-scope {
+    --project-card-h: 18rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-gallery-scope {
+    --project-card-h: 22rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .project-gallery-scope {
+    --project-card-h: 26rem;
+  }
+}
+
+.project-gallery {
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+}
+
+.project-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes project-detail-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-detail-enter {
+  animation: project-detail-in 350ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-detail-enter {
+    animation: none;
+  }
+}

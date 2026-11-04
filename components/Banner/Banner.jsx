@@ -4,7 +4,7 @@ import { Code, MicrophoneStage, Palette } from "@phosphor-icons/react"
 
 export default function Banner() {
     return (
-        <div className="relative w-screen h-screen bg-center bg-cover bg-[url('/images/banner-home.jpg')] text-white" id="hero">
+        <div className="relative w-full min-h-[max(100dvh,36rem)] bg-center bg-cover bg-[url('/images/banner-home.jpg')] text-white" id="hero">
             <div className="absolute lg:top-1/3 top-3/5 md:left-20 left-10 md:max-w-lg max-w-xs">
                 <h1 className="lg:text-7xl md:text-6xl text-5xl font-bold leading-tight">
                     Full Stack <br /> Developer
@@ -16,7 +16,7 @@ export default function Banner() {
                 </p>
             </div>
 
-            <div className="absolute flex bottom-5 md:right-10 space-x-4 text-sm opacity-90 md:w-auto w-screen md:justify-end justify-between md:px-0 px-5">
+            <div className="absolute flex bottom-5 md:right-10 space-x-4 text-sm opacity-90 md:w-auto w-full md:justify-end justify-between md:px-0 px-5">
                 <span className="flex items-center gap-1">
                     <Code size={18} weight="bold" />
                     Programador
