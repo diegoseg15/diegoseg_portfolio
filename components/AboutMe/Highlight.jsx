@@ -9,12 +9,13 @@ export function Highlight({ icon, text }) {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="
         flex items-center gap-3 p-4 rounded-md
-        bg-slate-100 dark:bg-slate-800
-        hover:scale-[1.05] transition
+        bg-muted/50 dark:bg-muted/30
+        border border-border/50
+        hover:bg-primary/10 dark:hover:bg-primary/10 transition-colors duration-200
       "
     >
-      <div className="text-sky-600">{icon}</div>
-      <span>{text}</span>
+      <div className="text-primary">{icon}</div>
+      <span className="text-foreground">{text}</span>
     </motion.div>
   );
 }
